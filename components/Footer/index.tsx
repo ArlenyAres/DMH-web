@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { COMPANY } from '@/data/company';
+import { buildWALink, WA_MESSAGES } from '@/lib/whatsapp';
 import styles from './Footer.module.css';
 
 const NAV_LINKS = [
@@ -19,7 +20,9 @@ export function Footer() {
     <footer className={styles.footer} role="contentinfo">
       <div className="container">
         <div className={styles['footer__grid']}>
-          <div>
+
+          {/* Columna marca */}
+          <div className={styles['footer__brand']}>
             <Link href="/" className={styles['footer__brand-logo']} aria-label="DMH – Inicio">
               <Image
                 src="/LOGO_DMH.png"
@@ -29,25 +32,13 @@ export function Footer() {
                 className={styles['footer__brand-img']}
               />
             </Link>
+            <p className={styles['footer__brand-tagline']}>{COMPANY.tagline}</p>
             <p className={styles['footer__brand-desc']}>{COMPANY.description}</p>
-            <Link
-              href={`mailto:${COMPANY.email}`}
-              className={styles['footer__contact-item']}
-            >
-              <span className={styles['footer__contact-icon']} aria-hidden="true">✉</span>
-              {COMPANY.email}
-            </Link>
-            <Link
-              href={`tel:${COMPANY.whatsapp}`}
-              className={styles['footer__contact-item']}
-            >
-              <span className={styles['footer__contact-icon']} aria-hidden="true">📱</span>
-              {COMPANY.whatsappDisplay}
-            </Link>
           </div>
 
+          {/* Columna navegación */}
           <div>
-            <p className={styles['footer__col-title']}>Navegación</p>
+            <p className={styles['footer__col-title']}>Menú</p>
             <ul className={styles['footer__nav-list']}>
               {NAV_LINKS.map(({ label, href }) => (
                 <li key={href}>
@@ -56,6 +47,37 @@ export function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Columna contacto */}
+          <div>
+            <p className={styles['footer__col-title']}>Contacto</p>
+            <ul className={styles['footer__contact-list']}>
+              <li>
+                <Link href={`mailto:${COMPANY.email}`} className={styles['footer__contact-item']}>
+                  <span className={styles['footer__contact-icon']} aria-hidden="true">✉</span>
+                  {COMPANY.email}
+                </Link>
+              </li>
+              <li>
+                <Link href={`tel:${COMPANY.whatsapp}`} className={styles['footer__contact-item']}>
+                  <span className={styles['footer__contact-icon']} aria-hidden="true">📞</span>
+                  {COMPANY.whatsappDisplay}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={buildWALink(WA_MESSAGES.cotizacion)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles['footer__contact-item']}
+                >
+                  <span className={styles['footer__contact-icon']} aria-hidden="true">💬</span>
+                  WhatsApp
+                </Link>
+              </li>
+            </ul>
+          </div>
+
         </div>
 
         <div className={styles['footer__bottom']}>
