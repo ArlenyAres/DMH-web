@@ -13,7 +13,7 @@
 }
 
 .accordion__item[open] {
-  border-color: rgba(255,102,0,0.25);
+  border-color: rgba(47,79,79,0.35);
 }
 
 .accordion__summary {
@@ -27,7 +27,7 @@
   font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-text);
   transition: var(--transition);
   user-select: none;
 }
@@ -36,15 +36,15 @@
 .accordion__summary::marker { display: none; }
 
 .accordion__summary:hover {
-  background: rgba(255,255,255,0.03);
+  background: rgba(47,79,79,0.05);
 }
 
 .accordion__icon {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: rgba(255,102,0,0.15);
-  color: var(--color-accent);
+  background: rgba(47,79,79,0.12);
+  color: var(--color-primary);
   display: flex;
   align-items: center;
   justify-content: center;

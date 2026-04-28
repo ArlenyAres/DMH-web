@@ -4,10 +4,10 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: var(--color-bg);
+  background: linear-gradient(160deg, var(--color-primary-dark) 0%, #0f2424 100%);
 }
 
-/* Halo azul eléctrico — arriba (como en el logo) */
+/* Halo verde claro — arriba */
 .hero::before {
   content: '';
   position: absolute;
@@ -16,7 +16,7 @@
   transform: translateX(-50%);
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle, rgba(24,120,232,0.42) 0%, rgba(24,120,232,0.10) 45%, transparent 70%);
+  background: radial-gradient(circle, rgba(168,195,190,0.22) 0%, rgba(47,79,79,0.08) 45%, transparent 70%);
   pointer-events: none;
 }
 
@@ -28,10 +28,10 @@
   transform: translateY(-52%);
   width: 620px;
   height: 620px;
-  opacity: 0.22;
+  opacity: 0.18;
   pointer-events: none;
   z-index: 0;
-  filter: drop-shadow(0 0 60px rgba(24,120,232,0.45));
+  filter: drop-shadow(0 0 60px rgba(168,195,190,0.35));
 }
 
 .hero__eye-img {
@@ -40,7 +40,7 @@
   object-fit: contain;
 }
 
-/* Halo azul secundario — abajo derecha, profundidad */
+/* Halo secundario — abajo derecha */
 .hero::after {
   content: '';
   position: absolute;
@@ -48,7 +48,7 @@
   right: -80px;
   width: 600px;
   height: 400px;
-  background: radial-gradient(ellipse, rgba(90,171,255,0.14) 0%, rgba(24,120,232,0.05) 55%, transparent 80%);
+  background: radial-gradient(ellipse, rgba(168,195,190,0.14) 0%, rgba(31,61,61,0.05) 55%, transparent 80%);
   pointer-events: none;
 }
 
@@ -67,9 +67,9 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(24,120,232,0.2);
-  border: 1px solid rgba(90,171,255,0.28);
-  color: var(--color-muted);
+  background: rgba(168,195,190,0.12);
+  border: 1px solid rgba(168,195,190,0.28);
+  color: var(--color-teal);
   font-family: var(--font-body);
   font-size: 0.8125rem;
   font-weight: 600;
@@ -103,22 +103,25 @@
   font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(38px, 5.5vw, 66px);
-  color: var(--color-white);
   line-height: 1.08;
   margin-bottom: 1.25rem;
   letter-spacing: -0.01em;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .hero__heading em {
   font-style: normal;
-  color: var(--color-accent);
+  -webkit-text-fill-color: var(--color-teal);
 }
 
 /* Subtitle */
 .hero__subtitle {
   font-family: var(--font-body);
   font-size: clamp(1rem, 2vw, 1.125rem);
-  color: var(--color-muted);
+  color: rgba(214,223,222,0.80);
   line-height: 1.7;
   margin-bottom: 2.25rem;
   max-width: 580px;
@@ -164,14 +167,14 @@
   font-size: 1rem;
   padding: 13px 28px;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(90,171,255,0.3);
+  border: 1px solid rgba(168,195,190,0.40);
   text-decoration: none;
   transition: var(--transition);
 }
 
 .hero__cta-secondary:hover {
-  border-color: var(--color-accent);
-  color: var(--color-accent);
+  border-color: var(--color-teal);
+  background: rgba(168,195,190,0.10);
   transform: translateY(-2px);
 }
 
@@ -183,8 +186,8 @@
 }
 
 .hero__stat {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(90,171,255,0.12);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(168,195,190,0.18);
   border-radius: var(--radius-md);
   padding: 1rem 1.25rem;
   backdrop-filter: blur(8px);
@@ -195,7 +198,7 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-size: 1.75rem;
-  color: var(--color-accent);
+  color: var(--color-teal);
   line-height: 1;
   margin-bottom: 0.25rem;
 }
@@ -203,7 +206,7 @@
 .hero__stat-label {
   font-family: var(--font-body);
   font-size: 0.75rem;
-  color: var(--color-muted);
+  color: rgba(214,223,222,0.70);
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;

@@ -27,7 +27,7 @@ export function Header() {
       <div className={`container ${styles['header__inner']}`}>
         <Link href="/" className={styles['header__logo']} aria-label="DMH – Inicio">
           <Image
-            src="/logoDMH.png"
+            src="/LOGO_DMH.png"
             alt="DMH – Distribuidora Merly Herazo"
             width={110}
             height={165}

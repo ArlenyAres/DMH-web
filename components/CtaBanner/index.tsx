@@ -7,7 +7,7 @@ export function CtaBanner({ title, subtitle, ctaLabel, ctaHref, secondaryLabel, 
   return (
     <section className={styles.banner} aria-label="Llamada a la acción">
       <div className={styles['banner__eye-decor']} aria-hidden="true">
-        <Image src="/detalleMarca.png" alt="" width={340} height={340} className={styles['banner__eye-img']} />
+        <Image src="/marcaAgua.png" alt="" width={340} height={340} className={styles['banner__eye-img']} />
       </div>
       <h2 className={styles['banner__title']}>{title}</h2>
       {subtitle && <p className={styles['banner__subtitle']}>{subtitle}</p>}

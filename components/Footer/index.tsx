@@ -22,10 +22,10 @@ export function Footer() {
           <div>
             <Link href="/" className={styles['footer__brand-logo']} aria-label="DMH – Inicio">
               <Image
-                src="/logoDMH.png"
+                src="/LOGO_DMH.png"
                 alt="DMH – Distribuidora Merly Herazo"
-                width={96}
-                height={144}
+                width={106}
+                height={154}
                 className={styles['footer__brand-img']}
               />
             </Link>
@@ -60,7 +60,7 @@ export function Footer() {
           <div>
             <p className={styles['footer__col-title']}>Ejecutiva</p>
             <p className={styles['footer__contact-item']} style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '0.25rem' }}>
-              <strong style={{ color: 'var(--color-white)', fontWeight: 600 }}>{COMPANY.executive}</strong>
+              <strong style={{ color: 'rgba(214,223,222,0.90)', fontWeight: 600 }}>{COMPANY.executive}</strong>
               <span>{COMPANY.role}</span>
             </p>
             <p className={styles['footer__col-title']} style={{ marginTop: '1.5rem' }}>Banco</p>

@@ -28,7 +28,7 @@ export function Hero() {
     <section className={styles.hero} aria-labelledby="hero-heading">
       <div className={styles['hero__eye-decor']} aria-hidden="true">
         <Image
-          src="/detalleMarca.png"
+          src="/marcaAgua.png"
           alt=""
           width={640}
           height={640}
