@@ -1,0 +1,79 @@
+.wa-fab {
+  position: fixed;
+  bottom: 26px;
+  right: 26px;
+  z-index: 9999;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: var(--color-wa);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.55);
+  transition: var(--transition);
+  text-decoration: none;
+  animation: wapulse 3s ease-in-out infinite;
+}
+
+.wa-fab svg {
+  width: 30px;
+  height: 30px;
+  fill: #ffffff;
+}
+
+.wa-fab:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+  animation: none;
+}
+
+.wa-fab__tooltip {
+  position: absolute;
+  right: 74px;
+  background: var(--color-surface);
+  color: var(--color-white);
+  padding: 9px 15px;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(8px);
+  transition: var(--transition);
+  pointer-events: none;
+  box-shadow: var(--shadow-m);
+  border: 1px solid var(--color-border);
+}
+
+.wa-fab__tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: var(--color-surface);
+  border-right: none;
+}
+
+.wa-fab:hover .wa-fab__tooltip,
+.wa-fab:focus-visible .wa-fab__tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.wa-fab:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+@keyframes wapulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,0.55); }
+  50%       { box-shadow: 0 4px 30px rgba(37,211,102,0.85), 0 0 0 10px rgba(37,211,102,0.12); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wa-fab { animation: none; }
+}

@@ -1,0 +1,16 @@
+export const COMPANY = {
+  name:            'Distribuidora Merly Herazo',
+  shortName:       'DMH',
+  rif:             'R-113076018',
+  executive:       'Ligia Herazo',
+  role:            'Ejecutiva de Ventas Corporativas',
+  whatsapp:        '+584127534636',
+  whatsappDisplay: '(0412) 753-4636',
+  email:           'ventas2.dmh@outlook.com',
+  bank:            'Banco Mercantil',
+  bankAccount:     '0105-0018-49-1018686541',
+  bankHolder:      'Distribuidora Merly Herazo F.P.',
+  tagline:         'Tu Socio Tecnológico Corporativo',
+  description:     'Empresa líder en distribución corporativa. Suministramos tecnología, equipos de oficina, telefonía, CCTV, UPS, línea blanca y más con rapidez, eficacia y respaldo total.',
+  siteUrl:         process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dmh.com.ve',
+} as const;

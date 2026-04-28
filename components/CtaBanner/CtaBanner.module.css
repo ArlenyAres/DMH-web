@@ -1,0 +1,113 @@
+.banner {
+  background: linear-gradient(135deg, #365E8B 0%, #0D1E2C 100%);
+  border: 1px solid rgba(90,171,255,0.2);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner__eye-decor {
+  position: absolute;
+  top: 50%;
+  right: -60px;
+  transform: translateY(-50%);
+  width: 340px;
+  height: 340px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  filter: drop-shadow(0 0 30px rgba(24,120,232,0.3));
+}
+
+.banner__eye-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.banner__title,
+.banner__subtitle,
+.banner__actions {
+  position: relative;
+  z-index: 1;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255,121,32,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.banner__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+  line-height: 1.15;
+}
+
+.banner__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-muted);
+  margin-bottom: 2rem;
+  max-width: 500px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+.banner__actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.banner__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 13px 28px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.banner__cta:hover {
+  background: #e06500;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(255,121,32,0.45);
+}
+
+.banner__secondary {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 12px 28px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(90,171,255,0.3);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.banner__secondary:hover {
+  border-color: var(--color-teal);
+  background: rgba(90,171,255,0.08);
+}
