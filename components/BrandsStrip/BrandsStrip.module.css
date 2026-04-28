@@ -56,11 +56,11 @@
 }
 
 .strip__item:hover {
-  color: var(--color-white);
+  color: var(--color-primary);
 }
 
 .strip__separator {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-size: 0.75rem;
   display: flex;
   align-items: center;

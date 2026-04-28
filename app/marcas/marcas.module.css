@@ -6,7 +6,7 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(1.5rem, 3vw, 2rem);
-  color: var(--color-white);
+  color: var(--color-text);
   margin-bottom: 0.75rem;
 }
 

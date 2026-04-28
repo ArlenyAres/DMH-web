@@ -42,17 +42,33 @@
 }
 ─────────────────────────────────────────── */
 
-/* ── PALETA ACTIVA: Azul Cerúleo + Naranja Mandarina ── */
+/* ── PALETA ACTIVA: DMH Verde Corporativo ── */
 :root {
-  --color-bg:       #18243A;   /* Navy aclarado — dos tonos sobre el anterior */
-  --color-surface:  #223050;   /* Navy medio aclarado */
-  --color-primary:  #1878E8;   /* Azul cerúleo corporativo */
-  --color-accent:   #FF7920;   /* Naranja mandarina — CTAs */
-  --color-teal:     #5AABFF;   /* Azul cielo — badges, éxito */
-  --color-white:    #F0F4FF;   /* Blanco frío — armoniza con navy */
-  --color-muted:    #8A96B4;   /* Azul-gris — textos secundarios */
-  --color-border:   rgba(90,171,255,0.14);
-  --color-wa:       #25D366;   /* WhatsApp verde */
+  /* Paleta Principal */
+  --color-primary:        #2F4F4F;   /* Verde Corporativo Principal */
+  --color-primary-dark:   #1F3D3D;   /* Azul Petróleo — navbar, énfasis */
+  --color-primary-mid:    #5F7F7F;   /* Verde Secundario */
+  --color-accent:         #4A6B6B;   /* Verde Acento — CTAs secundarios */
+
+  /* Paleta Secundaria */
+  --color-teal:           #A8C3BE;   /* Verde Suave — badges, detalles */
+  --color-teal-light:     #D6DFDE;   /* Verde Claro — fondos suaves */
+  --color-arena:          #E9E5D8;   /* Arena — secciones cálidas */
+
+  /* Fondos y superficies */
+  --color-bg:             #FAFAF8;   /* Hueso — fondo principal de página */
+  --color-bg-alt:         #F3F4F6;   /* Gris Suave — secciones alternas */
+  --color-surface:        #FFFFFF;   /* Blanco — tarjetas y superficies */
+
+  /* Texto */
+  --color-text:           #1A1A1A;   /* Carbón Oscuro — texto principal */
+  --color-white:          #FFFFFF;   /* Blanco puro */
+  --color-muted:          #5F7F7F;   /* Verde Secundario — textos secundarios */
+
+  /* Bordes y otros */
+  --color-border:         #E6E8EA;   /* Gris Claro — bordes */
+  --color-border-soft:    rgba(47, 79, 79, 0.15);
+  --color-wa:             #25D366;   /* WhatsApp verde */
 
   --font-display: 'Barlow Condensed', sans-serif;
   --font-body:    'Barlow', sans-serif;
@@ -61,9 +77,9 @@
   --radius-md: 10px;
   --radius-lg: 16px;
 
-  --shadow-s: 0 2px 8px rgba(0,8,30,.25);
-  --shadow-m: 0 4px 20px rgba(0,8,30,.40);
-  --shadow-l: 0 8px 40px rgba(0,8,30,.55);
+  --shadow-s: 0 2px 8px rgba(31,61,61,.10);
+  --shadow-m: 0 4px 20px rgba(31,61,61,.14);
+  --shadow-l: 0 8px 40px rgba(31,61,61,.18);
 
   --transition: all .25s cubic-bezier(.4,0,.2,1);
 
@@ -83,7 +99,7 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--color-bg);
-  color: var(--color-white);
+  color: var(--color-text);
   line-height: 1.6;
   min-height: 100dvh;
   -webkit-font-smoothing: antialiased;

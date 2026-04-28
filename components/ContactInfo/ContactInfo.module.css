@@ -15,8 +15,8 @@
   flex-shrink: 0;
   width: 44px;
   height: 44px;
-  background: rgba(21,86,199,0.25);
-  border: 1px solid rgba(90,171,255,0.2);
+  background: rgba(47,79,79,0.12);
+  border: 1px solid rgba(47,79,79,0.20);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -39,11 +39,11 @@
   font-family: var(--font-body);
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-text);
 }
 
 .info__link {
-  color: var(--color-accent);
+  color: var(--color-primary);
   text-decoration: none;
   transition: color 0.2s;
 }

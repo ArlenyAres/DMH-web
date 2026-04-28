@@ -1,6 +1,6 @@
 .banner {
-  background: linear-gradient(135deg, #365E8B 0%, #0D1E2C 100%);
-  border: 1px solid rgba(90,171,255,0.2);
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  border: 1px solid rgba(168,195,190,0.18);
   border-radius: var(--radius-lg);
   padding: 3rem 2.5rem;
   text-align: center;
@@ -18,7 +18,7 @@
   opacity: 0;
   pointer-events: none;
   z-index: 0;
-  filter: drop-shadow(0 0 30px rgba(24,120,232,0.3));
+  filter: drop-shadow(0 0 30px rgba(168,195,190,0.30));
 }
 
 .banner__eye-img {
@@ -41,7 +41,7 @@
   right: -60px;
   width: 200px;
   height: 200px;
-  background: radial-gradient(circle, rgba(255,121,32,0.12) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(168,195,190,0.15) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -57,7 +57,7 @@
 .banner__subtitle {
   font-family: var(--font-body);
   font-size: 1rem;
-  color: var(--color-muted);
+  color: rgba(214,223,222,0.85);
   margin-bottom: 2rem;
   max-width: 500px;
   margin-inline: auto;
@@ -75,8 +75,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--color-accent);
-  color: var(--color-bg);
+  background: var(--color-white);
+  color: var(--color-primary);
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 1rem;
@@ -87,9 +87,9 @@
 }
 
 .banner__cta:hover {
-  background: #e06500;
+  background: var(--color-teal-light);
   transform: translateY(-2px);
-  box-shadow: 0 4px 18px rgba(255,121,32,0.45);
+  box-shadow: 0 4px 18px rgba(31,61,61,0.30);
 }
 
 .banner__secondary {
@@ -102,12 +102,12 @@
   font-size: 1rem;
   padding: 12px 28px;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(90,171,255,0.3);
+  border: 1px solid rgba(168,195,190,0.40);
   text-decoration: none;
   transition: var(--transition);
 }
 
 .banner__secondary:hover {
   border-color: var(--color-teal);
-  background: rgba(90,171,255,0.08);
+  background: rgba(168,195,190,0.12);
 }
