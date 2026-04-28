@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { PageBanner, ProductTabs, CtaBanner } from '@/components';
+import { PageBanner, ProductCarousel, CtaBanner } from '@/components';
 import { PRODUCTS } from '@/data/products';
 import { generateMeta } from '@/lib/seo';
 import { buildWALink, WA_MESSAGES } from '@/lib/whatsapp';
@@ -18,8 +18,7 @@ export default function ProductosPage() {
 
       <section className={styles.section} aria-labelledby="productos-heading">
         <div className="container">
-          <h2 id="productos-heading" className="sr-only">Categorías de productos</h2>
-          <ProductTabs categories={PRODUCTS} />
+          <ProductCarousel categories={PRODUCTS} />
         </div>
       </section>
 

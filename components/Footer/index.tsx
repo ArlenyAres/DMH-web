@@ -56,21 +56,6 @@ export function Footer() {
               ))}
             </ul>
           </div>
-
-          <div>
-            <p className={styles['footer__col-title']}>Ejecutiva</p>
-            <p className={styles['footer__contact-item']} style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '0.25rem' }}>
-              <strong style={{ color: 'rgba(214,223,222,0.90)', fontWeight: 600 }}>{COMPANY.executive}</strong>
-              <span>{COMPANY.role}</span>
-            </p>
-            <p className={styles['footer__col-title']} style={{ marginTop: '1.5rem' }}>Banco</p>
-            <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.7 }}>
-              {COMPANY.bank}<br />
-              Cta: {COMPANY.bankAccount}<br />
-              {COMPANY.bankHolder}<br />
-              RIF: {COMPANY.rif}
-            </p>
-          </div>
         </div>
 
         <div className={styles['footer__bottom']}>

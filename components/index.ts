@@ -7,6 +7,7 @@ export { FeatureCard } from './FeatureCard';
 export { StatBox } from './StatBox';
 export { BrandsStrip } from './BrandsStrip';
 export { BrandGrid } from './BrandGrid';
+export { ProductCarousel } from './ProductCarousel';
 export { ProductTabs } from './ProductTabs';
 export { ProductPanel } from './ProductPanel';
 export { ServiceCard } from './ServiceCard';
