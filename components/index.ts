@@ -1,4 +1,5 @@
 export { WhatsAppChat } from './WhatsAppChat';
+export { BrandLogo } from './BrandLogo';
 export { Header } from './Header';
 export { Footer } from './Footer';
 export { Hero } from './Hero';

@@ -24,6 +24,8 @@ export interface Brand {
   id: string;
   name: string;
   category: string;
+  iconSlug?: string;
+  logoSrc?: string;
 }
 
 export interface FaqItem {
