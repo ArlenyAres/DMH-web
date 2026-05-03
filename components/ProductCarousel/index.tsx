@@ -3,6 +3,7 @@
 import { useEffect, useId, useState } from 'react';
 import Link from 'next/link';
 import { buildWALink } from '@/lib/whatsapp';
+import { CtaPopup } from '@/components/CtaPopup';
 import styles from './ProductCarousel.module.css';
 import type { ProductCarouselProps } from './types';
 
@@ -13,6 +14,7 @@ export function ProductCarousel({
   autoPlayInterval = DEFAULT_AUTOPLAY_INTERVAL,
 }: ProductCarouselProps) {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [popupOpen, setPopupOpen] = useState(false);
   const carouselId = useId();
 
   useEffect(() => {
@@ -95,7 +97,15 @@ export function ProductCarousel({
 
           <ul className={styles.carousel__items}>
             {activeCategory.items.map((item) => (
-              <li key={item.id} className={styles.carousel__item}>
+              <li
+                key={item.id}
+                className={styles.carousel__item}
+                onClick={() => setPopupOpen(true)}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setPopupOpen(true); }}
+                tabIndex={0}
+                role="button"
+                aria-label={`Consultar sobre ${item.name}`}
+              >
                 <span className={styles.carousel__itemIcon} aria-hidden="true" />
                 <div className={styles.carousel__itemBody}>
                   <span className={styles.carousel__itemName}>{item.name}</span>
@@ -140,6 +150,12 @@ export function ProductCarousel({
           </button>
         ))}
       </div>
+
+      <CtaPopup
+        isOpen={popupOpen}
+        onClose={() => setPopupOpen(false)}
+        context="producto"
+      />
     </div>
   );
 }
