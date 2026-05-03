@@ -41,6 +41,12 @@ export const PAGE_META: Record<string, SeoPageMeta> = {
     keywords: 'contacto DMH, Ligia Herazo ventas, WhatsApp cotizacion, email distribuidora tecnologia',
     path: '/contacto',
   },
+  'desarrollo-web': {
+    title: 'Desarrollo Web Profesional en Venezuela | DMH',
+    description: 'Landing pages desde $250, webs corporativas desde $299, tiendas online desde $690. Desarrollo web profesional en Venezuela con Next.js, SEO y WhatsApp integrado.',
+    keywords: 'desarrollo web Venezuela, diseño web profesional, landing page Venezuela, tienda online Venezuela, web corporativa Venezuela, precios página web',
+    path: '/desarrollo-web',
+  },
 };
 
 export function generateMeta(page: keyof typeof PAGE_META): Metadata {
@@ -66,6 +72,26 @@ export function generateMeta(page: keyof typeof PAGE_META): Metadata {
     },
   };
 }
+
+export const JSON_LD_SERVICE = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Desarrollo Web Profesional',
+  provider: {
+    '@type': 'LocalBusiness',
+    name: 'Distribuidora Merly Herazo',
+    telephone: '+584127534636',
+    email: 'ventas2.dmh@outlook.com',
+  },
+  areaServed: 'Venezuela',
+  description: 'Servicio de desarrollo web profesional en Venezuela. Landing pages, webs corporativas, tiendas online y proyectos a medida.',
+  offers: [
+    { '@type': 'Offer', name: 'Landing Page',      price: '250',  priceCurrency: 'USD' },
+    { '@type': 'Offer', name: 'Web Corporativa',   price: '299',  priceCurrency: 'USD' },
+    { '@type': 'Offer', name: 'Tienda Online',     price: '690',  priceCurrency: 'USD' },
+    { '@type': 'Offer', name: 'Web Personalizada', price: '1500', priceCurrency: 'USD' },
+  ],
+};
 
 export const JSON_LD_LOCAL_BUSINESS = {
   '@context': 'https://schema.org',

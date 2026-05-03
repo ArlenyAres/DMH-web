@@ -1,0 +1,226 @@
+/* ── Shared section layout ── */
+.devweb-intro,
+.devweb-pricing,
+.devweb-gallery,
+.devweb-process {
+  padding: 72px 24px;
+}
+
+.devweb-intro__inner,
+.devweb-pricing__inner,
+.devweb-gallery__inner,
+.devweb-process__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+/* ── Intro section ── */
+.devweb-intro {
+  background: var(--color-bg);
+}
+
+.devweb-intro__inner {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 48px;
+  align-items: center;
+}
+
+.devweb-intro__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 12px;
+}
+
+.devweb-intro__title {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.devweb-intro__title em {
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+.devweb-intro__text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-muted);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.devweb-intro__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.devweb-stat {
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 16px;
+  text-align: center;
+  box-shadow: var(--shadow-s);
+}
+
+.devweb-stat__num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.devweb-stat__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: var(--color-muted);
+  line-height: 1.3;
+}
+
+/* ── Pricing section ── */
+.devweb-pricing {
+  background: var(--color-bg-alt);
+}
+
+.devweb-pricing__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.devweb-pricing__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.devweb-pricing__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.devweb-pricing__title em {
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+.devweb-pricing__subtitle {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-muted);
+}
+
+/* ── Gallery section ── */
+.devweb-gallery {
+  background: var(--color-bg);
+}
+
+.devweb-gallery__header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.devweb-gallery__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.devweb-gallery__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.devweb-gallery__title em {
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+/* ── Process section ── */
+.devweb-process {
+  background: var(--color-bg-alt);
+}
+
+.devweb-process__header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.devweb-process__eyebrow {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+}
+
+.devweb-process__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.1;
+}
+
+.devweb-process__title em {
+  color: var(--color-primary);
+  font-style: normal;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .devweb-intro__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .devweb-intro__stats {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 600px) {
+  .devweb-intro,
+  .devweb-pricing,
+  .devweb-gallery,
+  .devweb-process {
+    padding: 48px 16px;
+  }
+
+  .devweb-intro__stats {
+    max-width: none;
+  }
+}
