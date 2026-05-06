@@ -20,15 +20,11 @@ const item = (i: number) => ({
 export function Hero() {
   const reduced = useReducedMotion();
 
-  const wrap = reduced
-    ? { hidden: {}, visible: {} }
-    : { hidden: { opacity: 0 }, visible: { opacity: 1 } };
-
   return (
     <section className={styles.hero} aria-labelledby="hero-heading">
       <div className={styles['hero__eye-decor']} aria-hidden="true">
         <Image
-          src="/marcaAgua.png"
+          src="/MarcaAgua.png"
           alt=""
           width={640}
           height={640}

@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useId, useState } from 'react';
+import { useEffect, useId, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { buildWALink, WA_MESSAGES } from '@/lib/whatsapp';
@@ -12,10 +12,8 @@ export interface CtaPopupProps {
 }
 
 export function CtaPopup({ isOpen, onClose, context }: CtaPopupProps) {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
   const titleId = useId();
-
-  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     if (!isOpen) return;

@@ -57,7 +57,6 @@ export function ProductCarousel({
     >
       <div className={styles.carousel__intro}>
         <div>
-          <p className={styles.carousel__eyebrow}></p>
           <h2 id="productos-heading" className={styles.carousel__title}>
             Puedes encontrar todos los productos para tu empresa con nosotros
           </h2>

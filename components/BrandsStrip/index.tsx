@@ -18,6 +18,8 @@ export function BrandsStrip() {
                 logoSrc={brand.logoSrc}
                 imgClassName={styles['strip__logo']}
                 fallbackClassName={styles['strip__logo-fallback']}
+                width={40}
+                height={40}
               />
             </span>
           ))}
