@@ -6,7 +6,7 @@ export function PageBanner({ title, subtitle, breadcrumb }: PageBannerProps) {
   return (
     <section className={styles.banner}>
       <div className={styles['banner__eye-decor']} aria-hidden="true">
-        <Image src="/marcaAgua.png" alt="" width={420} height={420} className={styles['banner__eye-img']} />
+        <Image src="/MarcaAgua.png" alt="" width={420} height={420} className={styles['banner__eye-img']} />
       </div>
       <div className="container">
         {breadcrumb && (
