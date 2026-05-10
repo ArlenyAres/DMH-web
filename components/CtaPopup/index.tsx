@@ -59,7 +59,7 @@ export function CtaPopup({ isOpen, onClose, context }: CtaPopupProps) {
     return () => {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
-      (triggerRef.current as HTMLElement | null)?.focus();
+      if (triggerRef.current instanceof HTMLElement) triggerRef.current.focus();
     };
   }, [isOpen, onClose]);
 
