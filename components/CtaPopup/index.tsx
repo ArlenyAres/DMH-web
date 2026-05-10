@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useId, useSyncExternalStore } from 'react';
+import { useEffect, useId, useRef, useSyncExternalStore } from 'react';
 import { createPortal } from 'react-dom';
 import Link from 'next/link';
 import { buildWALink, WA_MESSAGES } from '@/lib/whatsapp';
@@ -11,18 +11,55 @@ export interface CtaPopupProps {
   context: 'producto' | 'servicio';
 }
 
+const FOCUSABLE = [
+  'a[href]',
+  'button:not([disabled])',
+  'textarea:not([disabled])',
+  'input:not([disabled])',
+  'select:not([disabled])',
+  '[tabindex]:not([tabindex="-1"])',
+].join(', ');
+
 export function CtaPopup({ isOpen, onClose, context }: CtaPopupProps) {
   const mounted = useSyncExternalStore(() => () => {}, () => true, () => false);
   const titleId = useId();
+  const panelRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<Element | null>(null);
 
   useEffect(() => {
     if (!isOpen) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose(); };
+
+    triggerRef.current = document.activeElement;
+
+    const panel = panelRef.current;
+    if (panel) {
+      const first = panel.querySelectorAll<HTMLElement>(FOCUSABLE)[0];
+      first?.focus();
+    }
+
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { onClose(); return; }
+
+      if (e.key === 'Tab' && panel) {
+        const focusable = Array.from(panel.querySelectorAll<HTMLElement>(FOCUSABLE));
+        if (focusable.length === 0) { e.preventDefault(); return; }
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey) {
+          if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+        } else {
+          if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      }
+    };
+
     document.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
+
     return () => {
       document.removeEventListener('keydown', onKey);
       document.body.style.overflow = '';
+      (triggerRef.current as HTMLElement | null)?.focus();
     };
   }, [isOpen, onClose]);
 
@@ -31,6 +68,7 @@ export function CtaPopup({ isOpen, onClose, context }: CtaPopupProps) {
   return createPortal(
     <div className={styles.overlay} onClick={onClose} aria-label="Cerrar popup">
       <div
+        ref={panelRef}
         className={styles.panel}
         role="dialog"
         aria-modal="true"

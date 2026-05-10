@@ -12,26 +12,26 @@ export function BankCard() {
         </div>
       </div>
 
-      <div className={styles['card__rows']}>
+      <dl className={styles['card__rows']}>
         <div className={styles['card__row']}>
-          <span className={styles['card__label']}>Banco</span>
-          <span className={styles['card__value']}>{COMPANY.bank}</span>
+          <dt className={styles['card__label']}>Banco</dt>
+          <dd className={styles['card__value']}>{COMPANY.bank}</dd>
         </div>
         <div className={styles['card__row']}>
-          <span className={styles['card__label']}>Titular</span>
-          <span className={styles['card__value']}>{COMPANY.bankHolder}</span>
+          <dt className={styles['card__label']}>Titular</dt>
+          <dd className={styles['card__value']}>{COMPANY.bankHolder}</dd>
         </div>
         <div className={styles['card__row']}>
-          <span className={styles['card__label']}>Número de cuenta</span>
-          <span className={`${styles['card__value']} ${styles['card__account']}`}>
+          <dt className={styles['card__label']}>Número de cuenta</dt>
+          <dd className={`${styles['card__value']} ${styles['card__account']}`}>
             {COMPANY.bankAccount}
-          </span>
+          </dd>
         </div>
         <div className={styles['card__row']}>
-          <span className={styles['card__label']}>RIF</span>
-          <span className={styles['card__value']}>{COMPANY.rif}</span>
+          <dt className={styles['card__label']}>RIF</dt>
+          <dd className={styles['card__value']}>{COMPANY.rif}</dd>
         </div>
-      </div>
+      </dl>
 
       <p className={styles['card__note']}>
         Incluye tu nombre completo o empresa en el concepto de la transferencia para procesarla correctamente.
