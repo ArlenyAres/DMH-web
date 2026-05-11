@@ -202,25 +202,55 @@
 }
 
 /* ── Responsive ── */
+/* Tablet wide → stack intro columns */
 @media (max-width: 960px) {
   .devweb-intro__inner {
     grid-template-columns: 1fr;
   }
 
   .devweb-intro__stats {
-    max-width: 420px;
+    max-width: 480px;
   }
 }
 
+/* Tablet narrow → tighten padding + stats */
+@media (max-width: 768px) {
+  .devweb-intro,
+  .devweb-pricing,
+  .devweb-gallery,
+  .devweb-process {
+    padding: 56px 20px;
+  }
+
+  .devweb-intro__stats {
+    max-width: 360px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .devweb-pricing__header {
+    margin-bottom: 28px;
+  }
+
+  .devweb-process__header {
+    margin-bottom: 32px;
+  }
+}
+
+/* Mobile → minimal padding + full-width stats */
 @media (max-width: 600px) {
   .devweb-intro,
   .devweb-pricing,
   .devweb-gallery,
   .devweb-process {
-    padding: 48px 16px;
+    padding: 44px 16px;
   }
 
   .devweb-intro__stats {
     max-width: none;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .devweb-stat__num {
+    font-size: 28px;
   }
 }

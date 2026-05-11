@@ -4,9 +4,18 @@
   gap: 24px;
 }
 
-@media (max-width: 768px) {
+/* Tablet → reduce gap */
+@media (max-width: 900px) {
+  .pricing-grid {
+    gap: 16px;
+  }
+}
+
+/* Mobile → single column */
+@media (max-width: 640px) {
   .pricing-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 }
 

@@ -11,6 +11,9 @@ export function PricingCard({
   badgeVariant,
   type,
   name,
+  priceFrom,
+  priceTo,
+  priceSuffix,
   useCase,
   includes,
   isFeatured = false,
@@ -33,6 +36,17 @@ export function PricingCard({
       <span className={badgeClass}>{badge}</span>
       <p className={styles['pricing-card__type']}>{type}</p>
       <h3 className={styles['pricing-card__name']}>{name}</h3>
+
+      <p
+        className={styles['pricing-card__price']}
+        aria-label={priceTo ? `Precio: desde $${priceFrom} hasta $${priceTo} ${priceSuffix}` : `Precio: desde $${priceFrom} ${priceSuffix}`}
+      >
+        {priceTo
+          ? `$${priceFrom} – $${priceTo}`
+          : `Desde $${priceFrom}`}
+      </p>
+      <p className={styles['pricing-card__price-suffix']}>{priceSuffix}</p>
+
       <p className={styles['pricing-card__use-case']}>{useCase}</p>
 
       <hr className={styles['pricing-card__divider']} />

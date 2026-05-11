@@ -4,14 +4,41 @@ import Image from 'next/image';
 import styles from './WebGallery.module.css';
 import type { WebGalleryProps } from './types';
 
+const SLIDES_BREAKPOINT = 900; // show 1 slide on ≤900px, 2 on wider
+const DEFAULT_SLIDES_VISIBLE = 2;
+
+function getSlidesVisible(): number {
+  if (typeof window === 'undefined') return DEFAULT_SLIDES_VISIBLE;
+  return window.innerWidth <= SLIDES_BREAKPOINT ? 1 : DEFAULT_SLIDES_VISIBLE;
+}
+
 export function WebGallery({ items, title, subtitle }: WebGalleryProps) {
+  const [slidesVisible, setSlidesVisible] = useState(DEFAULT_SLIDES_VISIBLE);
   const [index, setIndex] = useState(0);
   const [imgErrors, setImgErrors] = useState<Record<string, boolean>>({});
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const touchStartX = useRef<number | null>(null);
+  const resizeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const slidesVisible = 2;
-  const maxIndex = items.length - slidesVisible;
+  useEffect(() => {
+    const update = () => {
+      const next = getSlidesVisible();
+      setSlidesVisible(next);
+      setIndex(0);
+    };
+    const handleResize = () => {
+      if (resizeTimerRef.current) clearTimeout(resizeTimerRef.current);
+      resizeTimerRef.current = setTimeout(update, 150);
+    };
+    update();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      if (resizeTimerRef.current) clearTimeout(resizeTimerRef.current);
+    };
+  }, []);
+
+  const maxIndex = Math.max(0, items.length - slidesVisible);
 
   const goTo = useCallback((i: number) => {
     setIndex(Math.max(0, Math.min(i, maxIndex)));
@@ -77,7 +104,11 @@ export function WebGallery({ items, title, subtitle }: WebGalleryProps) {
           aria-live="polite"
         >
           {items.map((item) => (
-            <div key={item.id} className={styles['web-gallery__slide']}>
+            <div
+              key={item.id}
+              className={styles['web-gallery__slide']}
+              style={{ width: `${100 / slidesVisible}%` }}
+            >
               <div className={styles['web-gallery__image-wrapper']}>
                 {imgErrors[item.id] ? (
                   <div className={styles['web-gallery__placeholder']} role="img" aria-label={item.imageAlt} />
@@ -90,7 +121,7 @@ export function WebGallery({ items, title, subtitle }: WebGalleryProps) {
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
                     onError={() => handleImgError(item.id)}
-                    sizes="(max-width: 640px) 100vw, 50vw"
+                    sizes="(max-width: 900px) 100vw, 50vw"
                   />
                 )}
                 <div className={styles['web-gallery__overlay']} aria-hidden="true" />

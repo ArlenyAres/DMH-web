@@ -65,7 +65,7 @@
   max-width: 180px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .process-steps__list {
     flex-direction: column;
     gap: 0;
@@ -88,12 +88,14 @@
     margin-bottom: 0;
   }
 
-  .process-steps__icon {
-    display: none;
-  }
-
   .process-steps__description {
     max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .process-steps__icon {
+    display: none;
   }
 }
 

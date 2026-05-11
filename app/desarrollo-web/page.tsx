@@ -98,11 +98,7 @@ export default function DesarrolloWebPage() {
               Proyectos que <em>hablan por sí solos</em>
             </h2>
           </header>
-          <WebGallery
-            items={PORTFOLIO}
-            title="Proyectos realizados"
-            subtitle="Ejemplos de distintos tipos de web para diferentes industrias."
-          />
+          <WebGallery items={PORTFOLIO} />
         </div>
       </section>
 
