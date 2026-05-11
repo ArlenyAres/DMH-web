@@ -19,3 +19,8 @@ export { ContactInfo } from './ContactInfo';
 export { BankCard } from './BankCard';
 export { CtaBanner } from './CtaBanner';
 export { SeoHead } from './SeoHead';
+export { PricingCard } from './PricingCard';
+export { PricingGrid } from './PricingGrid';
+export { WebGallery } from './WebGallery';
+export { HostingNote } from './HostingNote';
+export { ProcessSteps } from './ProcessSteps';

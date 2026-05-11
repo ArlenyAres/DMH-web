@@ -1,0 +1,27 @@
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+/* Tablet → reduce gap */
+@media (max-width: 900px) {
+  .pricing-grid {
+    gap: 16px;
+  }
+}
+
+/* Mobile → single column */
+@media (max-width: 640px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-grid * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
