@@ -17,15 +17,30 @@ interface BrandLogoProps {
 export function BrandLogo({ name, iconSlug, logoSrc, imgClassName, fallbackClassName, width = 48, height = 48 }: BrandLogoProps) {
   const [failed, setFailed] = useState(false);
 
-  const src = logoSrc ?? (iconSlug ? `${SI_BASE}/${iconSlug}` : null);
-
-  if (src && !failed) {
+  // Local PNGs → next/image (optimizado)
+  if (logoSrc && !failed) {
     return (
       <Image
-        src={src}
+        src={logoSrc}
         alt={name}
         width={width}
         height={height}
+        className={imgClassName}
+        onError={() => setFailed(true)}
+      />
+    );
+  }
+
+  // SVGs externos de SimpleIcons → <img> nativo (next/image no procesa SVG externo)
+  if (iconSlug && !failed) {
+    return (
+      // eslint-disable-next-line @next/next/no-img-element
+      <img
+        src={`${SI_BASE}/${iconSlug}`}
+        alt={name}
+        width={width}
+        height={height}
+        loading="lazy"
         className={imgClassName}
         onError={() => setFailed(true)}
       />
