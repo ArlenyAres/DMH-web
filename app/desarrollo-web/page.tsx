@@ -4,7 +4,6 @@ import {
   PageBanner,
   PricingGrid,
   WebGallery,
-  HostingNote,
   ProcessSteps,
   CtaBanner,
   SeoHead,
@@ -84,7 +83,6 @@ export default function DesarrolloWebPage() {
             </p>
           </header>
           <PricingGrid plans={WEB_PLANS} />
-          <HostingNote />
         </div>
       </section>
 
