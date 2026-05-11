@@ -110,6 +110,13 @@
   box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .panel {
+    animation: none;
+  }
+}
+
 @media (max-width: 480px) {
   .panel {
     padding: 2rem 1.5rem 1.5rem;

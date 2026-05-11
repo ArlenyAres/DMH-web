@@ -51,6 +51,28 @@
   letter-spacing: 0.06em;
 }
 
+.banner__breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.banner__breadcrumb-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.banner__breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.banner__breadcrumb-sep {
+  user-select: none;
+}
+
 .banner__title {
   font-family: var(--font-display);
   font-weight: 800;
