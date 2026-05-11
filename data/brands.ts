@@ -17,8 +17,8 @@ export const BRANDS: Brand[] = [
   { id: 'motorola',    name: 'MOTOROLA',    category: 'Telefonía',                 iconSlug: 'motorola' },
   { id: 'polycom',     name: 'POLYCOM',     category: 'Telefonía',                 iconSlug: 'poly' },
   { id: 'siemens',     name: 'SIEMENS',     category: 'Telefonía',                 iconSlug: 'siemens' },
-  { id: 'nortel',      name: 'NORTEL',      category: 'Telefonía',                 logoSrc: '/Nortel-Logo.wine.png' },
-  { id: 'plantronics', name: 'PLANTRONICS', category: 'Telefonía',                 logoSrc: '/Plantronics-Logo.wine.png' },
+  { id: 'nortel',      name: 'NORTEL',      category: 'Telefonía',                 logoSrc: '/nortel-logo.png' },
+  { id: 'plantronics', name: 'PLANTRONICS', category: 'Telefonía',                 logoSrc: '/plantronics-logo.png' },
   { id: 'okidata',     name: 'OKIDATA',     category: 'Impresoras',                logoSrc: '/okidata-logo-png-transparent.png' },
   { id: 'datacard',    name: 'DATACARD',    category: 'Impresoras',                logoSrc: '/datacard-logo-png.png' },
 ];
