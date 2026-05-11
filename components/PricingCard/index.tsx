@@ -37,7 +37,7 @@ export function PricingCard({
       <p className={styles['pricing-card__type']}>{type}</p>
       <h3 className={styles['pricing-card__name']}>{name}</h3>
 
-      <p
+      {/* <p
         className={styles['pricing-card__price']}
         aria-label={priceTo ? `Precio: desde $${priceFrom} hasta $${priceTo} ${priceSuffix}` : `Precio: desde $${priceFrom} ${priceSuffix}`}
       >
@@ -45,7 +45,7 @@ export function PricingCard({
           ? `$${priceFrom} – $${priceTo}`
           : `Desde $${priceFrom}`}
       </p>
-      <p className={styles['pricing-card__price-suffix']}>{priceSuffix}</p>
+      <p className={styles['pricing-card__price-suffix']}>{priceSuffix}</p> */}
 
       <p className={styles['pricing-card__use-case']}>{useCase}</p>
 
