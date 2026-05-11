@@ -86,7 +86,7 @@ export function WebGallery({ items, title, subtitle }: WebGalleryProps) {
                     src={item.imageSrc}
                     alt={item.imageAlt}
                     fill
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: 'contain', objectPosition: 'center' }}
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
                     onError={() => handleImgError(item.id)}

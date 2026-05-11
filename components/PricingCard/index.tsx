@@ -11,9 +11,6 @@ export function PricingCard({
   badgeVariant,
   type,
   name,
-  priceFrom,
-  priceTo,
-  priceSuffix,
   useCase,
   includes,
   isFeatured = false,
@@ -31,16 +28,11 @@ export function PricingCard({
     styles[`pricing-card__badge--${badgeVariant}`],
   ].join(' ');
 
-  const priceLabel = priceTo
-    ? `Desde $${priceFrom} – $${priceTo} ${priceSuffix}`
-    : `Desde $${priceFrom} ${priceSuffix}`;
-
   return (
     <motion.article className={cardClass} variants={fadeUp}>
       <span className={badgeClass}>{badge}</span>
       <p className={styles['pricing-card__type']}>{type}</p>
       <h3 className={styles['pricing-card__name']}>{name}</h3>
-      <p className={styles['pricing-card__price']}>{priceLabel}</p>
       <p className={styles['pricing-card__use-case']}>{useCase}</p>
 
       <hr className={styles['pricing-card__divider']} />

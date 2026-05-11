@@ -1,4 +1,5 @@
 'use client';
+import { Fragment } from 'react';
 import { motion } from 'framer-motion';
 import type { ProcessStep } from './types';
 import styles from './ProcessSteps.module.css';
@@ -53,9 +54,8 @@ export function ProcessSteps() {
         viewport={{ once: true, margin: '-60px' }}
       >
         {STEPS.map((step, i) => (
-          <>
+          <Fragment key={step.id}>
             <motion.li
-              key={step.id}
               className={styles['process-steps__item']}
               variants={fadeUpStep(i)}
             >
@@ -67,9 +67,9 @@ export function ProcessSteps() {
               </div>
             </motion.li>
             {i < STEPS.length - 1 && (
-              <div key={`connector-${step.id}`} className={styles['process-steps__connector']} aria-hidden="true" />
+              <div className={styles['process-steps__connector']} aria-hidden="true" />
             )}
-          </>
+          </Fragment>
         ))}
       </motion.ol>
     </div>
