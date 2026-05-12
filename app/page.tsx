@@ -31,7 +31,7 @@ export default function Home() {
             <FeatureCard
               emoji="⚡"
               title="Disponibilidad Inmediata"
-              description="Cotizaciones en horas, despacho nacional y acceso a más de 10 categorías de productos y 20 marcas líderes."
+              description="Hacemos tu cotización de manera inmediata, despacho nacional y acceso a más de 10 categorías de productos y 20 marcas líderes."
             />
           </div>
         </div>
