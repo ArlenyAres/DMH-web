@@ -53,14 +53,26 @@ export function Footer() {
             <p className={styles['footer__col-title']}>Contacto</p>
             <ul className={styles['footer__contact-list']}>
               <li>
+                <Link href={`tel:${COMPANY.phone}`} className={styles['footer__contact-item']}>
+                  <span className={styles['footer__contact-icon']} aria-hidden="true">📞</span>
+                  {COMPANY.phoneDisplay}
+                </Link>
+              </li>
+              <li>
                 <Link href={`mailto:${COMPANY.email}`} className={styles['footer__contact-item']}>
                   <span className={styles['footer__contact-icon']} aria-hidden="true">✉</span>
                   {COMPANY.email}
                 </Link>
               </li>
               <li>
+                <Link href={`mailto:${COMPANY.salesEmail}`} className={styles['footer__contact-item']}>
+                  <span className={styles['footer__contact-icon']} aria-hidden="true">✉</span>
+                  {COMPANY.salesEmail}
+                </Link>
+              </li>
+              <li>
                 <Link href={`tel:${COMPANY.whatsapp}`} className={styles['footer__contact-item']}>
-                  <span className={styles['footer__contact-icon']} aria-hidden="true">📞</span>
+                  <span className={styles['footer__contact-icon']} aria-hidden="true">📱</span>
                   {COMPANY.whatsappDisplay}
                 </Link>
               </li>
