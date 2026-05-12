@@ -23,6 +23,19 @@ export function ContactInfo() {
       </div>
 
       <div className={styles['info__item']}>
+        <span className={styles['info__icon']} aria-hidden="true">📞</span>
+        <div className={styles['info__content']}>
+          <div className={styles['info__label']}>Teléfono</div>
+          <Link
+            href={`tel:${COMPANY.phone}`}
+            className={`${styles['info__value']} ${styles['info__link']}`}
+          >
+            {COMPANY.phoneDisplay}
+          </Link>
+        </div>
+      </div>
+
+      <div className={styles['info__item']}>
         <span className={styles['info__icon']} aria-hidden="true">✉</span>
         <div className={styles['info__content']}>
           <div className={styles['info__label']}>Correo electrónico</div>
@@ -31,6 +44,19 @@ export function ContactInfo() {
             className={`${styles['info__value']} ${styles['info__link']}`}
           >
             {COMPANY.email}
+          </Link>
+        </div>
+      </div>
+
+      <div className={styles['info__item']}>
+        <span className={styles['info__icon']} aria-hidden="true">✉</span>
+        <div className={styles['info__content']}>
+          <div className={styles['info__label']}>Correo de ventas</div>
+          <Link
+            href={`mailto:${COMPANY.salesEmail}`}
+            className={`${styles['info__value']} ${styles['info__link']}`}
+          >
+            {COMPANY.salesEmail}
           </Link>
         </div>
       </div>
