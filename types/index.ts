@@ -74,6 +74,8 @@ export interface PortfolioItem {
   imageSrc: string;
   imageAlt: string;
   tags: string[];
+  url?: string;
+  isFullPage?: boolean;
 }
 
 export interface ProcessStep {

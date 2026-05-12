@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from './WebGallery.module.css';
 import type { WebGalleryProps } from './types';
 
-const SLIDES_BREAKPOINT = 900; // show 1 slide on ≤900px, 2 on wider
+const SLIDES_BREAKPOINT = 900;
 const DEFAULT_SLIDES_VISIBLE = 2;
 
 function getSlidesVisible(): number {
@@ -22,8 +22,7 @@ export function WebGallery({ items, title, subtitle }: WebGalleryProps) {
 
   useEffect(() => {
     const update = () => {
-      const next = getSlidesVisible();
-      setSlidesVisible(next);
+      setSlidesVisible(getSlidesVisible());
       setIndex(0);
     };
     const handleResize = () => {
@@ -66,14 +65,8 @@ export function WebGallery({ items, title, subtitle }: WebGalleryProps) {
   const handleTouchEnd = (e: React.TouchEvent) => {
     if (touchStartX.current === null) return;
     const delta = touchStartX.current - e.changedTouches[0].clientX;
-    if (Math.abs(delta) >= 50) {
-      goTo(delta > 0 ? index + 1 : index - 1);
-    }
+    if (Math.abs(delta) >= 50) goTo(delta > 0 ? index + 1 : index - 1);
     touchStartX.current = null;
-  };
-
-  const handleImgError = (id: string) => {
-    setImgErrors((prev) => ({ ...prev, [id]: true }));
   };
 
   const dotCount = maxIndex + 1;
@@ -109,27 +102,46 @@ export function WebGallery({ items, title, subtitle }: WebGalleryProps) {
               className={styles['web-gallery__slide']}
               style={{ width: `${100 / slidesVisible}%` }}
             >
-              <div className={styles['web-gallery__image-wrapper']}>
-                {imgErrors[item.id] ? (
-                  <div className={styles['web-gallery__placeholder']} role="img" aria-label={item.imageAlt} />
-                ) : (
-                  <Image
-                    src={item.imageSrc}
-                    alt={item.imageAlt}
-                    fill
-                    style={{ objectFit: 'contain', objectPosition: 'center' }}
-                    placeholder="blur"
-                    blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
-                    onError={() => handleImgError(item.id)}
-                    sizes="(max-width: 900px) 100vw, 50vw"
-                  />
-                )}
-                <div className={styles['web-gallery__overlay']} aria-hidden="true" />
-                <span className={styles['web-gallery__badge']}>{item.category}</span>
-                <div className={styles['web-gallery__caption']}>
-                  <p className={styles['web-gallery__caption-category']}>{item.variant}</p>
-                  <p className={styles['web-gallery__caption-title']}>{item.title}</p>
+              {/* Browser frame */}
+              <div className={styles['browser-frame']}>
+
+                {/* Chrome bar */}
+                <div className={styles['browser-chrome']} aria-hidden="true">
+                  <div className={styles['browser-dots']}>
+                    <span className={styles['browser-dot']} />
+                    <span className={styles['browser-dot']} />
+                    <span className={styles['browser-dot']} />
+                  </div>
+                  <div className={styles['browser-address']}>
+                    <span className={styles['browser-url']}>{item.url ?? item.title.toLowerCase().replace(/\s+/g, '') + '.com'}</span>
+                  </div>
                 </div>
+
+                {/* Viewport */}
+                <div className={styles['browser-viewport']}>
+                  {imgErrors[item.id] ? (
+                    <div className={styles['web-gallery__placeholder']} role="img" aria-label={item.imageAlt} />
+                  ) : (
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.imageAlt}
+                      fill
+                      style={{ objectFit: 'cover' }}
+                      className={item.isFullPage ? styles['img--scrollable'] : styles['img--static']}
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg=="
+                      onError={() => setImgErrors((prev) => ({ ...prev, [item.id]: true }))}
+                      sizes="(max-width: 900px) 100vw, 50vw"
+                    />
+                  )}
+                  <div className={styles['web-gallery__overlay']} aria-hidden="true" />
+                  <span className={styles['web-gallery__badge']}>{item.category}</span>
+                  <div className={styles['web-gallery__caption']}>
+                    <p className={styles['web-gallery__caption-category']}>{item.variant}</p>
+                    <p className={styles['web-gallery__caption-title']}>{item.title}</p>
+                  </div>
+                </div>
+
               </div>
             </div>
           ))}
@@ -160,17 +172,13 @@ export function WebGallery({ items, title, subtitle }: WebGalleryProps) {
             onClick={() => goTo(index - 1)}
             disabled={index === 0}
             aria-label="Slide anterior"
-          >
-            ←
-          </button>
+          >←</button>
           <button
             className={`${styles['web-gallery__arrow']} ${styles['web-gallery__arrow--next']}`}
             onClick={() => goTo(index + 1)}
             disabled={index >= maxIndex}
             aria-label="Siguiente slide"
-          >
-            →
-          </button>
+          >→</button>
         </div>
       </div>
     </section>

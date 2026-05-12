@@ -9,6 +9,8 @@ export const PORTFOLIO: PortfolioItem[] = [
     imageSrc: '/images/portfolio/web landig restaurante risu.png',
     imageAlt: 'Landing page para restaurante con hero principal y secciones de marca',
     tags: ['Landing Page', 'Restaurante', 'CTA'],
+    url: 'risu-restaurant.com',
+    isFullPage: false,
   },
   {
     id: 'revo-coffee',
@@ -18,6 +20,8 @@ export const PORTFOLIO: PortfolioItem[] = [
     imageSrc: '/images/portfolio/coffee-Shop.png',
     imageAlt: 'Tienda online de cafe con catalogo de productos y combos',
     tags: ['E-commerce', 'Catalogo', 'Productos'],
+    url: 'revocoffee.com',
+    isFullPage: true,
   },
   {
     id: 'moge-events',
@@ -27,6 +31,8 @@ export const PORTFOLIO: PortfolioItem[] = [
     imageSrc: '/images/portfolio/moge web de eventos.png',
     imageAlt: 'Sitio web de eventos con secciones editoriales y agenda semanal',
     tags: ['Eventos', 'Agenda', 'Comunidad'],
+    url: 'mogeevents.com',
+    isFullPage: true,
   },
   {
     id: 'best-bites',
@@ -36,6 +42,8 @@ export const PORTFOLIO: PortfolioItem[] = [
     imageSrc: '/images/portfolio/restaurante-web.png',
     imageAlt: 'Web de restaurante con menu, platos destacados y formulario de reserva',
     tags: ['Restaurante', 'Reservas', 'Menu'],
+    url: 'bestbites.com',
+    isFullPage: true,
   },
   {
     id: 'sophia-williams',
@@ -45,6 +53,8 @@ export const PORTFOLIO: PortfolioItem[] = [
     imageSrc: '/images/portfolio/web fotografo.png',
     imageAlt: 'Portfolio fotografico responsive mostrado en desktop y mobile',
     tags: ['Portfolio', 'Responsive', 'Galeria'],
+    url: 'sophiawilliams.com',
+    isFullPage: false,
   },
   {
     id: 'matilde',
@@ -54,6 +64,8 @@ export const PORTFOLIO: PortfolioItem[] = [
     imageSrc: '/images/portfolio/mattilde-web-.png',
     imageAlt: 'Sitio web para pastelería y cafetería Matilde',
     tags: ['Pastelería', 'Cafetería', 'Landing Page'],
+    url: 'matilde.com',
+    isFullPage: true,
   },
   {
     id: 'clinica-dental',
@@ -63,5 +75,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     imageSrc: '/images/portfolio/Clinica-dental.png',
     imageAlt: 'Sitio web para clínica dental con servicios y contacto',
     tags: ['Salud', 'Clínica', 'Odontología'],
+    url: 'clinicadental.com',
+    isFullPage: true,
   },
 ];
