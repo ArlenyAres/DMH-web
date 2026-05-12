@@ -5,13 +5,9 @@ const isDev = process.env.NODE_ENV === 'development';
 const nextConfig: NextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'cdn.simpleicons.org',
-        pathname: '/**',
-      },
-    ],
+    dangerouslyAllowSVG: true,
+    contentDispositionType: 'attachment',
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
   },
   async headers() {
     const csp = [

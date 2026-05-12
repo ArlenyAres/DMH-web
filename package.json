@@ -30,6 +30,7 @@
     "eslint-config-next": "16.2.4",
     "jest": "^30.3.0",
     "jest-environment-jsdom": "^30.3.0",
+    "simple-icons": "^16.19.0",
     "ts-node": "^10.9.2",
     "typescript": "^5"
   }
