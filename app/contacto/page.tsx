@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { PageBanner, ContactInfo, BankCard, CtaBanner } from '@/components';
+import { PageBanner, ContactInfo, CtaBanner } from '@/components';
 import { generateMeta } from '@/lib/seo';
 import { buildWALink, WA_MESSAGES } from '@/lib/whatsapp';
 import styles from './contacto.module.css';
@@ -17,16 +17,8 @@ export default function ContactoPage() {
 
       <section className={styles.section}>
         <div className="container">
-          <div className={styles['section__grid']}>
-            <div>
-              <h2 className={styles['col__title']}>Información de contacto</h2>
-              <ContactInfo />
-            </div>
-            <div>
-              <h2 className={styles['col__title']}>Datos bancarios</h2>
-              <BankCard />
-            </div>
-          </div>
+          <h2 className={styles['col__title']}>Información de contacto</h2>
+          <ContactInfo />
         </div>
       </section>
 
