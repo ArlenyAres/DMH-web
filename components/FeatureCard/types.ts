@@ -1,5 +1,5 @@
 export interface FeatureCardProps {
-  emoji: string;
+  icon: React.ReactNode;
   title: string;
   description: string;
 }
