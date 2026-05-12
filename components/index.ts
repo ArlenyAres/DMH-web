@@ -16,6 +16,7 @@ export { ServiceCard } from './ServiceCard';
 export { ServicesList } from './ServicesList';
 export { FaqAccordion } from './FaqAccordion';
 export { ContactInfo } from './ContactInfo';
+export { ContactForm } from './ContactForm';
 export { BankCard } from './BankCard';
 export { CtaBanner } from './CtaBanner';
 export { SeoHead } from './SeoHead';
