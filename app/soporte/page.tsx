@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { PageBanner, FaqAccordion, BankCard, CtaBanner } from '@/components';
+import { PageBanner, FaqAccordion, CtaBanner } from '@/components';
 import { FAQ } from '@/data/faq';
 import { generateMeta } from '@/lib/seo';
 import { buildWALink, WA_MESSAGES } from '@/lib/whatsapp';
@@ -18,16 +18,7 @@ export default function SoportePage() {
 
       <section className={styles.section}>
         <div className="container">
-          <div className={styles['section__grid']}>
-            <div>
-              <h2 className={styles['col__title']}>Preguntas frecuentes</h2>
-              <FaqAccordion items={FAQ} />
-            </div>
-            <div>
-              <h2 className={styles['col__title']}>Datos de pago</h2>
-              <BankCard />
-            </div>
-          </div>
+          <FaqAccordion items={FAQ} />
         </div>
       </section>
 

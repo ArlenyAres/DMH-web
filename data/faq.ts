@@ -9,7 +9,7 @@ export const FAQ: FaqItem[] = [
   {
     id: 'f02',
     question: '¿Cuáles son los métodos de pago disponibles?',
-    answer: 'Aceptamos transferencia bancaria a Banco Mercantil (cuenta 0105-0018-49-1018686541 a nombre de Distribuidora Merly Herazo F.P., RIF R-113076018). Consulta por otros métodos disponibles.',
+    answer: 'Aceptamos transferencia bancaria. Consulta por otros métodos disponibles.',
   },
   {
     id: 'f03',

@@ -42,8 +42,7 @@ export default function DesarrolloWebPage() {
               online completa.
             </p>
             <p className={styles['devweb-intro__text']}>
-              Trabajamos para empresas, emprendedores y profesionales en Venezuela con
-              precios en dólares, proceso claro y entregas en tiempo real.
+              Trabajamos para empresas, emprendedores y profesionales en Venezuela y entregas en tiempo real.
             </p>
           </div>
           <aside className={styles['devweb-intro__stats']} aria-label="Cifras clave">
@@ -79,7 +78,7 @@ export default function DesarrolloWebPage() {
               Elige el plan <em>que necesita tu proyecto</em>
             </h2>
             <p className={styles['devweb-pricing__subtitle']}>
-              Precios en dólares. Sin sorpresas. Sin letra pequeña.
+              Sin sorpresas. Sin letra pequeña.
             </p>
           </header>
           <PricingGrid plans={WEB_PLANS} />

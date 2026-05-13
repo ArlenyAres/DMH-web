@@ -55,6 +55,6 @@ export const SERVICES: Service[] = [
     emoji: '📊',
     title: 'Cotizaciones Inmediatas',
     description: 'Cotizaciones al mejor precio del mercado. Todo lo que necesitas, nosotros te lo conseguimos.',
-    items: ['Respuesta en horas', 'Mejor precio garantizado', 'Envíos a todo el país', 'Sin compromiso'],
+    items: ['Respuesta rápida', 'Mejor precio garantizado', 'Envíos a todo el país', 'Sin compromiso'],
   },
 ];
